@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var k =0;
+	var str = "I have not intrest in reading book not like to read.";
+	for (var i = 0; i < str.length; i++) {
+			if(str[i]=="n"){
+				for (var j = i+1 ; j <i+2; j++) {
+					if (str[j]=="o") {
+						for (var l = j+1; l < j+2; l++) {
+							if (str[l]=="t") {
+								k++;
+							}
+						}
+					}
+				}
+			}
+		
+	}
+	console.log(k);
+
+</script>
+
+</body>
+</html>

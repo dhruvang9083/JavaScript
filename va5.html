@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age</title>
+</head>
+<body>
+
+
+
+<script>
+	 
+
+var days = new Array();
+	days[0] = "Sun";
+	days[1] = "Mon";
+	days[2] = "Tues";
+	days[3] = "Wed";
+	days[4] = "Thur";
+	days[5] = "Fri";
+	days[6] = "Sat";
+		// Second way you could do this
+	var days2 = new Array("Sun","Mon","Tues","Wed","thurs","Fri","Sat"); 
+	
+	alert(days.length);
+	var days= prompt("enter days")
+
+
+	for (i=0;i<days2.length;i++)
+		{
+			if(days[i]==days2){
+			//document.write("Day" + i + "=" + days[i] + "</br>")
+			document.write("<h1>" + days[i] + "</h1>");
+		}
+	}
+
+</script>
+</body>
+</html>

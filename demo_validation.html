@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form id="myForm">
+	First Name<input id="1" type="text" name="First name">
+	Last Name<input id="2" type="text" name="last name">
+	<input id= "3" type="radio" name="gender">Male
+	<input type="radio" name="gender">Female
+	<select>
+		<option>NY</option>
+		<option>NJ</option>
+		<option>CA</option>
+	</select>
+	<input type="checkbox" name="Accept">Accept
+	<button onclick="validateForm()">submit</button>
+
+
+
+</form>
+<script>
+function validateForm() {
+	var stringOnly = /^[A-Za-z]+$/;
+    var x = document.getElementById("1").value;
+    if (x == "") {
+        alert(" First Name must be filled out");
+        return false;
+    }
+
+    if(x!==''){
+   if(stringOnly.test(x)){
+    alert('It is GOOD!');
+   }else{
+    alert('Your data input is invalid!');
+   }
+  }else{
+   alert('Please enter data!');
+  }
+
+  var stringOnly = /^[A-Za-z]+$/;
+    var y = document.getElementById("2").value;
+    if (y == "") {
+        alert(" First Name must be filled out");
+        return false;
+    }
+
+    if(x!==''){
+   if(stringOnly.test(y)){
+    alert('It is GOOD!');
+   }else{
+    alert('Your data input is invalid!');
+   }
+  }else{
+   alert('Please enter data!');
+  }
+    }
+
+
+</script>
+</body>
+</html>
