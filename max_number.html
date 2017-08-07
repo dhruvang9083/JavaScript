@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+
+/* function sort(array){
+
+	var z = array.length;
+
+	for(var i=0;i<z;i++){
+    var x = Math.max.apply( Math, array);
+    //console.log(x);
+     var y = array.splice(array.indexOf(3), 1);
+    
+    //var p = Math.max.apply(null, array);
+    console.log(y);
+}
+ //console.log(y); 
+} 
+
+sort([10,20,15,25,45,35,50,43,40]);
+*/
+
+function thirdLargest(arr)
+{
+
+	var z = arr.length;
+    /* There should be atleast three elements */
+    
+ 
+    // Initialize first, second and third Largest element
+    var first = arr[0];
+     var second = 0; 
+    var third = 0; 
+ 
+    // Traverse array elements to find the third Largest
+    for (var i = 1; i < z ; i ++)
+    {
+        /* If current element is greater than first,
+           then update first, second and third */
+        if (arr[i] > first)
+        {
+            third  = second;
+            second = first;
+            first  = arr[i];
+        }
+ 
+        /* If arr[i] is in between first and second */
+        else if (arr[i] > second)
+        {
+            third = second;
+            second = arr[i];
+        }
+ 
+        /* If arr[i] is in between second and third */
+        else if (arr[i] > third)
+            third = arr[i];
+    }
+ 
+    console.log(third);
+}
+
+thirdLargest([1,2,3,4,5,11,23,21,34,54,65,34,45,55]);
+
+</script>
+
+</body>
+</html>

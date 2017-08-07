@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		test
+	</title>
+</head>
+<body>
+	<div id="formDiv" style=" border: 3px solid black; background-color:grey; width: 300px; height: 400px; margin: 20px;"">
+		<form>
+		    <label for="fName">First Name</label><br>
+			<input type="text" name="FirstName" id="1" class="tx"/><br>
+
+			<label for="lName">Last Name</label><br>
+			<input type="text" name="LastName" id="2" class="tx"/><br>
+
+			Gender<br><input type="radio" name="gender" class="tx" id="3"> Male<br>
+			<input type="radio" name="gender" class="tx" id="4"> Female<br>
+
+			<label for="5">State</label><br>
+			<select name="States" id="5"><br>
+					  <option value="California">CA</option>
+					  <option value="Texas">Tx</option>
+					  <option value="New York">NY</option>
+					  <option value="Arizona">AZ</option>
+			</select>
+			
+		</form>
+	</div>
+
+	<div id="viewDiv" style="border: 3px solid black; background-color: grey; width: 300px; height: 400px; margin: 20px; margin-left: 400px; margin-top: -425px;">
+
+			<p class="list"></p><br>
+			<p class="list"></p><br>
+			<p class="list"></p><br>
+			<p class="list"></p>
+	</div>
+
+<button onclick="outputP()">Save</button>
+<button id="demo2" onclick="inputP()" style="visibility: hidden;">Edit</button>
+
+
+		<script type="text/javascript">
+		var z;
+		var y;
+			function outputP() {
+				// body...
+				for(var i = 0; i < 2; i++){
+					document.getElementsByClassName("list")[i].innerHTML = document.getElementsByClassName("tx")[i].value;
+					document.getElementsByClassName("tx")[i].value = "";
+				}
+
+				if(document.getElementById("3").checked == true){
+					document.getElementsByClassName("list")[2].innerHTML = "Male";
+					z=document.getElementById("3").value;
+					document.getElementById("3").checked = false;				}
+
+				else if(document.getElementById("4").checked == true){
+					document.getElementsByClassName("list")[2].innerHTML = "Female";
+					z=document.getElementById("4").value;
+					document.getElementById("4").checked = false;
+				}
+				else {
+					document.getElementsByClassName("list")[2].innerHTML = "Gender is not selected";
+				}
+
+				document.getElementsByClassName("list")[3].innerHTML = document.getElementById("5").value;
+				y=document.getElementById("5").value;
+				document.getElementById("5").value = "";
+
+				document.getElementById("demo2").style.visibility = "visible";
+			}
+
+			function inputP(){
+				for(var i = 0; i < 2; i++){
+					document.getElementsByClassName("tx")[i].value = document.getElementsByClassName("list")[i].innerHTML;
+				}
+                document.getElementById("3").checked = z;
+                document.getElementById("4").checked = z;
+                document.getElementById("5").value = y;
+
+			}
+
+		</script>
+
+</body>
+</html>

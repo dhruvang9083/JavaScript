@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<div id="FromDiv" style="width: 450px; height: 300px; border: 3px solid black ">
+First Name<input id="1" type="text" name="First name"><br><br>
+Last Name<input id="2" type="text" name="last name" ><br><br>
+Gender<input id="4" type="radio" name="gender"  value="Male">Male
+<input id ="5" type="radio" name="gender" value="Female">Female<br><br>
+<select id="3">
+<option>State</option><br><br>
+	<option>NY</option>
+	<option>NJ</option>
+	<option>CA</option>
+</select><br><br>
+<button onclick="validateForm()">Save</button>
+</div>
+<div id="ViewDiv" style="width: 450px; height: 500px; border: 3px solid black; margin-left: 600px;">
+	<p id="Transfer"></p>
+	<button onclick="validateForm()" style="visibility: hidden;">EDIT</button>
+</div>
+
+<script>
+	
+	function validateForm(){
+
+		var p = document.getElementById("1").value;
+		var q = document.getElementById("2").value;
+		var r = document.getElementById("3").value;
+
+		console.log(p);
+		console.log(q);
+		console.log(r);
+
+
+		var s = document.getElementById("4").checked;
+		console.log(s);
+		var t = document.getElementById("5").checked;
+		console.log(t);
+		var a= "";
+
+		if (s==true){
+			 a = "Male";
+		}
+
+		else if(t==true){
+			a = "Female";
+		}
+
+		document.getElementById("Transfer").innerHTML = p + "<br>" + "<br>"+ q+ "<br>" + "<br>"+  r + "<br>" + "<br>"+ a;
+
+
+
+
+
+
+	}
+</script>
+
+</body>
+</html>

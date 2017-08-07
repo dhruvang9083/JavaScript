@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  What color do you prefer?<br>
+  <input type="radio" name="colors" id="red" onclick="check()">Red<br>
+
+</form>
+
+
+
+<script>
+
+ var x = true;
+
+function check() {
+
+	
+    if( x==true)
+    {
+    document.getElementById("red").checked = true;
+    x = false;
+    }
+    
+    else{
+    document.getElementById("red").checked = false;
+    x = true;
+    
+    }
+    
+ 
+    
+    
+}
+
+</script>
+
+</body>
+</html>

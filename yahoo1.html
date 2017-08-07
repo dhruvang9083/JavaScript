@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<label for="pwd0">Password:</label>
+<input type="password" value="hello" name="password" id="pwd0" />
+<a href="#" onclick="toggle_password('pwd0');" id="showhide">Show</a>
+<button onclick="hi()">submit</button>
+
+<select id="number" style="width: 40px; margin-left: 0px; margin-top: 0px;">
+              <option value="+1">+1</option>
+              <option value="+2">+2</option>
+              <option value="+3">+3</option>
+              <option value="+4">+4</option>
+              <option value="+5">+5</option>
+</select>
+
+<input type="text" name="mobileNumber" placeholder="Mobile Number*"  id="mobileNumber" style="width: 260px; margin-top: 0px;">
+<p id="mobilepara" style="visibility: hidden; color: red ; size: 8px; margin-top: 0px; margin-left: 10px;"> required</p>
+<button onclick="myFunction()">Try it</button>
+<p id ="hi"></p>
+
+
+<script>
+function hi(){
+
+validPassWord();
+toggle_password();
+
+
+}
+
+
+function validPassWord(){
+  var x = document.getElementById("showhide").value;
+  
+  var y = x.match(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[&*()])/);
+  if (y) {
+    alert("true");
+  }
+  else{
+    alert("false"); 
+  }
+
+}
+function toggle_password(target){
+    var d = document;
+    var tag = d.getElementById(target);
+    var tag2 = d.getElementById("showhide");
+
+    if (tag2.innerHTML == 'Show'){
+        tag.setAttribute('type', 'text');   
+        tag2.innerHTML = 'Hide';
+
+    } else {
+        tag.setAttribute('type', 'password');   
+        tag2.innerHTML = 'Show';
+    }
+}
+
+function myFunction() {
+  var s2 = document.getElementById("mobileNumber").value;
+  var s3 = (""+s2).replace(/\D/g, '');
+  var m = s3.match(/^(\d{3})(\d{3})(\d{4})$/);
+  var k = ((!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]);
+  document.getElementById("hi").innerHTML = k;
+  document.getElementById("mobileNumber").value = k;
+  
+}
+</script>
+</body>
+</html>
